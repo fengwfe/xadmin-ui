@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import {
   Grid,
   TextField,
@@ -33,8 +34,13 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main
   }
 }));
-const SignIn = () => {
+const SignIn = props => {
   const classes = useStyles();
+  function handleSign() {
+    alert("Hello");
+    props.history.push("/home");
+  }
+
   return (
     <Paper className={classes.container}>
       <Grid
@@ -65,6 +71,7 @@ const SignIn = () => {
               color="primary"
               variant="contained"
               className={classes.loginButton}
+              onClick={handleSign}
             >
               登录
             </Button>
@@ -107,4 +114,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default withRouter(SignIn);
