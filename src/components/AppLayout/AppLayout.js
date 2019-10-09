@@ -5,9 +5,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "./Header/Header";
 import SideNav from "./SideNav";
 import { DRAWER_WIDTH } from "../../constants/constant";
-import { Route } from "react-router-dom";
-import Dashboard from "../../views/Dashboard";
-import SearchUser from "../../views/User/SearchUser";
 
 const drawerWidth = DRAWER_WIDTH;
 
@@ -39,7 +36,8 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0
   }
 }));
-const AppLayout = () => {
+const AppLayout = props => {
+  let { children } = props;
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   function handleDrawerOpen() {
@@ -60,8 +58,7 @@ const AppLayout = () => {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Route path="/home" component={Dashboard} />
-        <Route path="/user" component={SearchUser} />
+        {children}
       </main>
     </div>
   );

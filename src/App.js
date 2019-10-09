@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import SignIn from "./views/SignIn";
-import AppLayout from "./components/AppLayout";
+import Admin from "./components/Admin";
+import PageNotFound from "./components/PageNotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <div>
         <Switch>
           <Route path="/signIn" component={SignIn} />
-          <Route component={AppLayout} />
+          <Route path="/admin" component={Admin} />
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     </Router>

@@ -1,0 +1,8 @@
+export const CREATE_USER = "CREATE_USER";
+export const UPATE_USER_BY_ID = "UPATE_USER_BY_ID";
+export const DELETE_USER_BY_ID = "DELETE_USER_BY_ID";
+export const FETCH_USER_BY_ID = "FETCH_USER_BY_ID";
+export const FETCH_USER = "FETCH_USER";
+export const FETCH_USER_PENDING = "FETCH_USER_PENDING";
+export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
+export const FETCH_USER_ERROR = "FETCH_USER_ERROR";
